@@ -1,13 +1,13 @@
 {
   "name": "tailwind-variants-issue",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "version": "0.0.1",
   "type": "module",
   "sideEffects": false,
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/msaaqcom/abjad.git",
+  "repository": "https://github.com/yaman3bd/tailwind-variants-issue",
   "main": "./dist/tailwind-variants-issue.umd.js",
   "module": "./dist/tailwind-variants-issue.es.js",
   "types": "./dist/index.d.ts",
@@ -16,8 +16,6 @@
       "import": "./dist/tailwind-variants-issue.es.js",
       "require": "./dist/tailwind-variants-issue.umd.js"
     },
-    "./dist/style.css": "./dist/style.css",
-    "./src/utils": "./src/utils",
     "./dist/theme": "./dist/theme/theme.cjs"
   },
   "scripts": {

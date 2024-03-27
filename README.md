@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# Tailwind Variants Type Issue
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+to reproduce the issue:
 
-Currently, two official plugins are available:
+in any react project install the package:
+```bash
+npm i tailwind-variants-issue
+```
+then import Button component from the package and use it in your project:
+```javascript
+import { Button } from 'tailwind-variants-issue'
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
+function App() {
+  return (
+    <div className="App">
+      <Button
+        variant="link"
+        color="gray"
+      />
+    </div>
+  );
 }
 ```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+then typescript will throw an error on the variant/color props with the following message:
+```bash
+TS2322: Type string is not assignable to type never
+```

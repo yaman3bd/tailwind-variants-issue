@@ -25,3 +25,4 @@ then typescript will throw an error on the variant/color props with the followin
 ```bash
 TS2322: Type string is not assignable to type never
 ```
+![img.png](public/img.png)
